@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/SpringBootThymeleafForm/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="HelloWorld" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="deneme2" target="1.5" />
+      <module name="SpringBootThymeleafForm" target="19" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="HelloWorld" options="-parameters" />
+      <module name="SpringBootThymeleafForm" options="-parameters" />
+    </option>
+  </component>
+</project>

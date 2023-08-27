@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Registration</title>
+        <style type="text/css">
+            label{
+                display: inline-block;
+                width: 200px;
+                margin: 5px;
+                text-align: Left;
+                }
+            button{
+                margin: 10px;
+                padding: 10px;
+                }
+            input[type=text], input[type=password],select{
+                display: inline-block;
+                width: 200px;
+                }
+            input[type=checkbox]{
+                margin-right: 190px ;
+
+                }
+        </style>
+    <link href=
+                  'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+          rel='stylesheet'>
+
+    <script src=
+                    "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+    </script>
+
+    <script src=
+                    "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" >
+    </script>
+
+</head>
+<body bgcolor="silver" style="color: ivory" >
+
+<div style="text-align: center">
+        <h1 style="color: darkkhaki" >User Registration</h1>
+        <form action="#" th:action="@{/users}" th:object="${user}" method="post">
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%" >Full name:</label>
+            <input type="text" th:field="${user.name}"/> </br>
+
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%">E-mail:</label>
+            <input type="text" th:field="${user.email}"/>
+            </br>
+
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%">Password:</label>
+            <input type="password" th:field="${user.password}"/>
+            </br>
+
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%">Birthday:</label>
+            <input type="text" id="my_date_picker" th:field="${user.birthday}">
+            </br>
+
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%">Profession:</label>
+            <select th:field="${user.profession}"/>
+                <option th:each="p : ${professionList}" th:value="${p}" th:text="${p}" />
+            </select>
+            <br/>
+
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%">Married ?</label>
+            <input type="checkbox" th:field="${user.married}"/><br/>
+
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%">Gender:</label>
+            <input type="radio" th:field="${user.gender}" value="Male"/>Male
+
+            <input type="radio" th:field="${user.gender}" value="Female"/>Female
+            <br/>
+
+            <label style="color:maroon;font-family:tahoma;font-weight:bold;font-size:125%">Note:</label>
+            <textarea rows="5" cols="25" th:field="${user.note}"></textarea>
+            <br/>
+
+
+
+            <button type="submit">Register</button>
+        </form>
+
+    </div>
+<script>
+    $(document).ready(function() {
+
+        $(function() {
+            $( "#my_date_picker" ).datepicker();
+        });
+    })
+</script>
+</body>
+</html>
